@@ -703,7 +703,7 @@ selrequest(XEvent *e) {
     }
 
     /* all done, send a notification to the listener */
-    if (!XSendEvent(xsre->display, xsre->requestor, 1, 0, (XEvent * ) & xev))
+    if (!XSendEvent(xsre->display, xsre->requestor, 1, 0, (XEvent *) &xev))
         fprintf(stderr, "Error sending SelectionNotify event\n");
 }
 
@@ -1867,7 +1867,6 @@ kpress(XEvent *ev) {
             return;
         }
     }
-
     /* 2. custom keys from config.h */
     if ((customkey = kmap(ksym, e->state))) {
         ttywrite(customkey, strlen(customkey), 1);

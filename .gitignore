@@ -2,3 +2,4 @@
 st
 *.rej
 *.orig
+cmake-build-debug
